@@ -1,0 +1,1 @@
+SUBSYSTEM=="tty", SUBSYSTEMS=="usb", ATTRS{manufacturer}=="Segway", SYMLINK+="segway", MODE="0666"

@@ -2,7 +2,7 @@
 
 ## About
 
-Fork of the segway_rmp ROS package repo for use with ROS melodic. Requires accompanying [libsegwayrmp](https://github.com/jvont/libsegwayrmp) (ported to ROS melodic as well) to be installed. See [wiki](https://wiki.ros.org/segway_rmp) for more details.
+Fork of the segway_rmp ROS package repo for use with ROS melodic, with additional joystick support out of the box. Requires accompanying [libsegwayrmp](https://github.com/jvont/libsegwayrmp) (ported to ROS melodic as well) to be installed. See [wiki](https://wiki.ros.org/segway_rmp) for more details.
 
 ## Installation
 
@@ -15,6 +15,8 @@ git clone git@github.com:jvont/segway_rmp.git
 cd ..
 catkin_make
 ```
+
+Add `90-segway.rules` found in `udev/` to your computer's udev rules folder (usually found at `/etc/udev/rules.d`). This allows our `segway_rmp.launch` file to find the segway via usb connection. If two segways are used, additional rules may be added to distinguish each based on serial number/model.
 
 ## Usage
 
