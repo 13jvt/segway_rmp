@@ -2,6 +2,13 @@
 Changelog for package segway_rmp
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.1.3 (2021-06-08)
+------------------
+* Updated code to fix Boost compatibility issues
+* Ported to ROS melodic
+* Added joystick support out of the box
+* Contributors: Johann von Tiesenhausen
+
 0.1.2 (2015-03-14)
 ------------------
 * Merge pull request `#24 <https://github.com/segwayrmp/segway_rmp/issues/24>`_ from segwayrmp/piyushk/parametrize_frame_ids
