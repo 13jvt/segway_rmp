@@ -16,7 +16,7 @@ cd ..
 catkin_make
 ```
 
-Add `90-segway.rules` found in `udev/` to your computer's udev rules folder (usually found at `/etc/udev/rules.d`). This allows our `segway_rmp.launch` file to find the segway via usb connection. If two segways are used, additional rules may be added to distinguish each based on serial number/model.
+Add `90-segway.rules` found in `rules/` to your computer's udev rules folder (usually found at `/etc/udev/rules.d`). This allows our `segway_rmp.launch` file to find the segway via usb connection. If two segways are used, additional rules may be added to distinguish each based on serial number/model.
 
 ## Usage
 
