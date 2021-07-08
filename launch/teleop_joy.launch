@@ -1,0 +1,26 @@
+<launch>
+  <!-- segway base -->
+  <!-- <include file="$(find segway_rmp)/launch/segway_rmp.launch"/> -->
+
+  <!-- joy node -->
+  <node respawn="true" pkg="joy" type="joy_node" name="joy_node" output="screen" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.22" />
+  </node>
+
+  <!-- teleop node -->
+  <param name="axis_linear" value="1" type="int"/>
+  <param name="scale_linear" value="1" type="double"/>
+  <param name="max_linear" value="0.2" type="double"/>
+  <param name="min_linear" value="-0.2" type="double"/>
+
+  <param name="axis_angular" value="3" type="int"/>
+  <param name="scale_angular" value="1" type="double"/>
+  <param name="max_angular" value="0.2" type="double"/>
+  <param name="min_angular" value="-0.2" type="double"/>
+
+  <param name="button_safety" value="5" type="int"/>
+
+  <node pkg="segway_rmp" type="teleop_joy_node" name="teleop_joy" output="screen" />
+
+</launch>
