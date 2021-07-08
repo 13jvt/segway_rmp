@@ -2,7 +2,7 @@
 
 ## About
 
-Fork of the segway_rmp ROS package repo for use with ROS melodic. Requires accompanying [libsegwayrmp](https://github.com/jvont/libsegwayrmp) (ported to ROS melodic as well) to be installed.
+Fork of the segway_rmp ROS package repo for use with ROS melodic. Requires accompanying [libsegwayrmp](https://github.com/jvont/libsegwayrmp) (ported to ROS melodic as well) to be installed. See [wiki](https://wiki.ros.org/segway_rmp) for more details.
 
 ## Installation
 
