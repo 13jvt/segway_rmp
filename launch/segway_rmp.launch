@@ -1,15 +1,15 @@
 <launch>
     <node name="segway_rmp_node" pkg="segway_rmp" type="segway_rmp_node" output="screen" required="true">
         <!-- If you want to do Serial -->
-        <!-- <param name="interface_type" type="str" value="serial" /> -->
-        <!-- <param name="serial_port" type="str" value="/dev/ttyUSB0" /> -->
+        <param name="interface_type" type="str" value="serial" />
+        <param name="serial_port" type="str" value="/dev/ttyUSB0" />
         
         <!-- If you want to do USB -->
-        <param name="interface_type" type="str" value="usb" />
+        <!-- <param name="interface_type" type="str" value="usb" /> -->
         
             <!-- Select USB by index -->
-            <param name="usb_selector" type="str" value="index" />
-            <param name="usb_index" type="int" value="0" />
+            <!-- <param name="usb_selector" type="str" value="index" /> -->
+            <!-- <param name="usb_index" type="int" value="0" /> -->
             
             <!-- Select USB by Serial Number -->
             <!-- <param name="usb_selector" type="str" value="serial_number" /> -->

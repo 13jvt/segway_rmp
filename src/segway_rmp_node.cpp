@@ -47,7 +47,7 @@ void handleDebugMessages(const std::string &msg) {ROS_DEBUG("%s",msg.c_str());}
 void handleInfoMessages(const std::string &msg) {ROS_INFO("%s",msg.c_str());}
 void handleErrorMessages(const std::string &msg) {ROS_ERROR("%s",msg.c_str());}
 
-void handleStatusWrapper(segwayrmp::SegwayStatus::Ptr &ss);
+void handleStatusWrapper(const segwayrmp::SegwayStatus::Ptr &ss);
 
 // ROS Node class
 class SegwayRMPNode {
@@ -194,7 +194,7 @@ public:
         }
     }
     
-    void handleStatus(segwayrmp::SegwayStatus::Ptr &ss_ptr) {
+    void handleStatus(const segwayrmp::SegwayStatus::Ptr &ss_ptr) {
         if (!this->connected)
             return;
         // Get the time
@@ -637,7 +637,7 @@ private:
 };
 
 // Callback wrapper
-void handleStatusWrapper(segwayrmp::SegwayStatus::Ptr &ss) {
+void handleStatusWrapper(const segwayrmp::SegwayStatus::Ptr &ss) {
     segwayrmp_node_instance->handleStatus(ss);
 }
 
