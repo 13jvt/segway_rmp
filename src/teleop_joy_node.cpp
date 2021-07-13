@@ -28,7 +28,7 @@ private:
 
   int safety;
 
-  ros::NodeHandle nh;
+  ros::NodeHandle * nh;
 
   ros::Publisher vel_pub;
   ros::Subscriber joy_sub;
@@ -38,20 +38,22 @@ private:
 
 TeleopJoy::TeleopJoy()
 {
-  nh.param("/axis_linear", linear.axis, 1);
-  nh.param("/scale_linear", linear.scale, 1.0);
-  nh.param("/max_linear", linear.max, 0.5);
-  nh.param("/min_linear", linear.min, -0.5);
+  nh = new ros::NodeHandle("~");
 
-  nh.param("/axis_angular", angular.axis, 3);
-  nh.param("/scale_angular", angular.scale, 1.0);
-  nh.param("/max_angular", angular.max, 0.5);
-  nh.param("/min_angular", angular.min, -0.5);
+  nh->param("axis_linear", linear.axis, 1);
+  nh->param("scale_linear", linear.scale, 1.0);
+  nh->param("max_linear", linear.max, 0.5);
+  nh->param("min_linear", linear.min, -0.5);
 
-  nh.param("/button_safety", safety, 5);
+  nh->param("axis_angular", angular.axis, 3);
+  nh->param("scale_angular", angular.scale, 1.0);
+  nh->param("max_angular", angular.max, 0.5);
+  nh->param("min_angular", angular.min, -0.5);
 
-  vel_pub = nh.advertise<geometry_msgs::Twist>("/cmd_vel", 1);
-  joy_sub = nh.subscribe<sensor_msgs::Joy>("/joy", 10, &TeleopJoy::joy_callback, this);
+  nh->param("button_safety", safety, 5);
+
+  vel_pub = nh->advertise<geometry_msgs::Twist>("/cmd_vel", 1);
+  joy_sub = nh->subscribe<sensor_msgs::Joy>("/joy", 10, &TeleopJoy::joy_callback, this);
 }
 
 void TeleopJoy::joy_callback(const sensor_msgs::Joy::ConstPtr& joy)
